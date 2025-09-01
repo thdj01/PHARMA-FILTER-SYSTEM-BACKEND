@@ -1,35 +1,35 @@
-Pharma Filter System Backend
+# Pharma Filter System Backend
 
 This project is the backend for a pharmaceutical filter tracking and management system.
 It is built with Django and Django REST Framework, providing a robust API for managing filters, cleaning records, user roles, and generating reports.
 
-🚀 Features
+## 🚀 Features
 
-User Management: Handles different user roles (admin, supervisor, operator) with secure authentication.
+- **User Management**: Handles different user roles (admin, supervisor, operator) with secure authentication.
 
-Filter Tracking: Manages filters, their locations (AHUs and Plants), and their statuses.
+- **Filter Tracking**: Manages filters, their locations (AHUs and Plants), and their statuses.
 
-Cleaning Records: Stores detailed cleaning information (dates, times, and status).
+- **Cleaning Records**: Stores detailed cleaning information (dates, times, and status).
 
-Audit Logging: Tracks all key model changes to ensure a complete audit trail.
+- **Audit Logging**: Tracks all key model changes to ensure a complete audit trail.
 
-API Endpoints: Provides a RESTful API for all system resources.
+- **API Endpoints**: Provides a RESTful API for all system resources.
 
-Dockerized Environment: Containerized setup for consistent deployment.
+- **Dockerized Environment**: Containerized setup for consistent deployment.
 
-🛠 Technologies Used
+## 🛠 Technologies Used
 
-Django – High-level Python web framework
+- **Django** – High-level Python web framework
 
-Django REST Framework (DRF) – Toolkit for building Web APIs
+- **Django REST Framework (DRF)** – Toolkit for building Web APIs
 
-SQLite3 – Lightweight, file-based database (for development)
+- **SQLite3** – Lightweight, file-based database (for development)
 
-Gunicorn – WSGI HTTP Server for UNIX
+- **Gunicorn** – WSGI HTTP Server for UNIX
 
-Docker & Docker Compose – Containerization tools
+- **Docker & Docker Compose** – Containerization tools
 
-📋 Prerequisites
+## 📋 Prerequisites
 
 Docker
  installed and running
@@ -37,33 +37,41 @@ Docker
 Docker Compose
  installed
 
-⚡ Getting Started
+## ⚡ Getting Started
 
 Follow these steps to run the backend in a Docker container:
 
-1. Clone the Repository
-git clone <your-repo-url>
+### 1. Clone the Repository
+```bash
+git clone https://github.com/thdj01/PHARMA-FILTER-SYSTEM-BACKEND.git
 cd pharma-filter-system-backend
+```
 
-2. Create a .env File
+### 2. Create a .env File
 
 Create a file named .env in the root directory.
 (It can be empty for now, but useful for future environment variables.)
 
-3. Build the Docker Image
-docker-compose build
+### 3. Build the Docker Image
+```bash
 
-4. Run Database Migrations and Create Superuser
+docker-compose build
+```
+### 4. Run Database Migrations and Create Superuser
+```bash
+
 docker-compose run web python manage.py makemigrations
 docker-compose run web python manage.py migrate
 docker-compose run web python manage.py createsuperuser
-
+```
 
 ➡️ You’ll be prompted to enter a username, email, and password.
 
-5. Start the Services
-docker-compose up -d
+### 5. Start the Services
+```bash
 
+docker-compose up -d
+```
 
 Now, the application should be running at:
 👉 http://localhost:8000
@@ -72,16 +80,18 @@ Now, the application should be running at:
 
 Base URL: http://localhost:8000/api/
 
-Endpoint	Description
-/api/users/	Manage user accounts
-/api/plants/	Manage plants
-/api/ahus/	Manage AHUs (Air Handling Units)
-/api/filter-types/	Manage filter types
-/api/filters/	Manage individual filters
-/api/cleaning-records/	Manage filter cleaning records
-/api/audit-logs/	View audit log entries
-/api/token/	Obtain JWT access & refresh tokens
-🛠 Django Admin Panel
+| Endpoint             | Description                          |
+|-----------------------|--------------------------------------|
+| `/api/users/`         | Manage user accounts                 |
+| `/api/plants/`        | Manage plants                        |
+| `/api/ahus/`          | Manage AHUs (Air Handling Units)     |
+| `/api/filter-types/`  | Manage filter types                  |
+| `/api/filters/`       | Manage individual filters            |
+| `/api/cleaning-records/` | Manage filter cleaning records   |
+| `/api/audit-logs/`    | View audit log entries               |
+| `/api/token/`         | Obtain JWT access & refresh tokens   |
+
+### 🛠 Django Admin Panel
 
 Access the admin panel at:
 👉 http://localhost:8000/admin/
